@@ -6,7 +6,7 @@ variable "create" {
 
 variable "eip_to_create" {
   type        = number
-  description = "Whether to create the eip"
+  description = "Number of EIP to create"
   default     = 1
 }
 
@@ -63,40 +63,4 @@ variable "tags" {
   type        = map(any)
   description = "Maps of tags to assign to the resource"
   default     = {}
-}
-
-variable "associate_eip" {
-  type = bool
-  description = "Whether to allow the EIP to be re-associated"
-  default = true
-}
-
-variable "allow_reassociation" {
-  type = bool
-  description = "Whether to allow the EIP to be re-associated"
-  default = true
-}
-
-variable "associate_instance_ids" {
-  type = list(string)
-  description = "The Instance ID to attach the EIP"
-  default = null
-}
-
-variable "associate_network_interface_ids" {
-  type = list(string)
-  description = "The Network Interface ID to attach the EIP"
-  default = null
-}
-
-variable "associate_private_ip_address" {
-  type = list(string)
-  description = "The Private IP to associate with the public IP"
-  default = null
-}
-
-variable "associate_public_ip" {
-  type = list(string)
-  description = "Elastic IP for EC2-Classic"
-  default = null
 }
